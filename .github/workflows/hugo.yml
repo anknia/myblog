@@ -21,7 +21,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: recursive
           fetch-depth: 0
 
       - name: Setup Hugo
@@ -29,6 +28,10 @@ jobs:
         with:
           hugo-version: '0.146.0'
           extended: true
+
+      - name: Fetch theme
+        run: |
+          git clone https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
 
       - name: Build Hugo
         run: hugo --minify
