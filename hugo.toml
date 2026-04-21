@@ -6,3 +6,29 @@ theme = "PaperMod"
 [params]
   author = "ank"
   description = "我的个人博客"
+  
+  # 封面图配置
+  [params.layoutMatrice]
+    home = "profile"
+  
+  [params.homeInfoParams]
+    Title = "欢迎来到我的博客"
+    Content = "记录生活，分享想法"
+
+  # 深色模式支持（auto=跟随系统，dark=深色，light=浅色）
+  defaultTheme = "auto"
+  
+  # 社交链接
+  [[params.socialIcons]]
+    icon = "github"
+    url = "https://github.com/anknia"
+
+  [[params.socialIcons]]
+    icon = "mail"
+    url = "mailto:ank@example.com"
+
+[frontmatter]
+  [frontmatter.meta]
+    showDate = true
+    showWordCount = true
+    showReadingTime = true
