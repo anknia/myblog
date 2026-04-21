@@ -29,9 +29,9 @@ jobs:
           hugo-version: '0.146.0'
           extended: true
 
-      - name: Fetch theme
+      - name: Setup submodule
         run: |
-          git clone https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
+          git submodule update --init --recursive
 
       - name: Build Hugo
         run: hugo --minify
