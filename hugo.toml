@@ -7,13 +7,26 @@ theme = "PaperMod"
   author = "ank"
   description = "我的个人博客"
   
-  # 封面区域信息
-  homeInfoParams = { 
-    Title = "欢迎来到我的博客",
-    Content = "记录生活，分享想法"
-  }
+  # 启用封面模式（profile 模式）
+  [params.profileMode]
+    enabled = true
+    title = "欢迎来到我的博客"
+    subtitle = "记录生活，分享想法"
+    imageUrl = "https://avatars.githubusercontent.com/u/anknia"
+    imageTitle = "头像"
+    imageWidth = 120
+    imageHeight = 120
+  
+  # 封面按钮
+  [[params.profileMode.buttons]]
+    name = "文章列表"
+    url = "posts/"
+  
+  [[params.profileMode.buttons]]
+    name = "关于我"
+    url = "about/"
 
-  # 深色模式（auto=跟随系统）
+  # 深色模式（auto=跟随系统，dark=深色，light=浅色）
   defaultTheme = "auto"
   
   # 社交链接
@@ -25,8 +38,29 @@ theme = "PaperMod"
     icon = "mail"
     url = "mailto:ank@example.com"
 
-[frontmatter]
-  [frontmatter.meta]
-    showDate = true
-    showWordCount = true
-    showReadingTime = true
+  # 文章元信息显示
+  ShowReadingTime = true
+  ShowWordCount = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "首页"
+    url = "/"
+    weight = 10
+  
+  [[menu.main]]
+    identifier = "posts"
+    name = "文章"
+    url = "/posts/"
+    weight = 20
+  
+  [[menu.main]]
+    identifier = "about"
+    name = "关于"
+    url = "/about/"
+    weight = 30
